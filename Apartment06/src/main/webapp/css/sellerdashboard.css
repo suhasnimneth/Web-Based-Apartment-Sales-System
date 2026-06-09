@@ -1,0 +1,174 @@
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #f8f8f8;
+}
+
+/* Layout */
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    background: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 4px 0 15px rgba(0,0,0,0.05);
+}
+
+.logo {
+    color: #333;
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.logo span {
+    color: #e63946;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+.sidebar nav ul li {
+    padding: 12px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 8px 0;
+    transition: 0.3s;
+    font-weight: 500;
+}
+.sidebar nav ul li:hover,
+.sidebar nav ul li.active {
+    background: rgba(230,57,70,0.1);
+    color: #e63946;
+}
+
+.logout-btn {
+    padding: 12px;
+    border: 2px solid #e63946;
+    border-radius: 10px;
+    background: transparent;
+    color: #e63946;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.logout-btn:hover {
+    background: #e63946;
+    color: #fff;
+}
+
+/* Main content */
+.main-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Hero banner */
+.hero-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #fff, #fef2f2);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+.hero-text h1 {
+    margin: 0;
+    color: #e63946;
+}
+.hero-text p {
+    color: #444;
+    margin-top: 10px;
+}
+.hero-img img {
+    width: 250px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Dashboard cards */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+.card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+.card h3 {
+    margin: 0 0 10px;
+    color: #e63946;
+}
+.card p {
+    color: #333;
+}
+
+/* Apartment Section */
+.apartment-preview h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+.apartment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+.apt-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+.apt-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+.apt-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+.apt-card h4 {
+    margin: 10px;
+    color: #e63946;
+}
+.apt-card p {
+    margin: 0 10px 15px;
+    color: #333;
+    font-weight: 500;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: inherit;   /* keeps the same text color */
+    display: block;   /* makes the whole li clickable */
+    padding: 12px 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.sidebar nav ul li a:hover {
+    background: rgba(230,57,70,0.1);
+    color: #e63946;
+}
