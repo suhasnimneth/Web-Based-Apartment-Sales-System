@@ -1,0 +1,156 @@
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    background: #f8f8f8;
+}
+
+.page-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+}
+
+/* Form wrapper */
+.form-wrapper {
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 40px 35px;
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    animation: fadeUp 1s ease-in-out;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Back Button - Maximum Specificity with CSS Variables */
+body .page-wrapper .form-wrapper .back-btn {
+    position: absolute !important;
+    left: 20px !important;
+    top: 20px !important;
+    background: transparent !important;
+    color: #e63946 !important;
+    border: 2px solid #e63946 !important;
+    padding: 0.8rem 1.5rem !important;
+    border-radius: 25px !important;
+    cursor: pointer !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    margin-bottom: 20px !important;
+    --bg-color: transparent;
+    --text-color: #e63946;
+}
+
+body .page-wrapper .form-wrapper .back-btn:hover {
+    background: #e63946 !important;
+    color: white !important;
+    transform: translateY(-2px) !important;
+    border-color: #e63946 !important;
+    --bg-color: #e63946;
+    --text-color: white;
+}
+
+/* Force hover with CSS */
+body .page-wrapper .form-wrapper .back-btn:hover,
+body .page-wrapper .form-wrapper a.back-btn:hover {
+    background-color: #e63946 !important;
+    color: white !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Override all possible states */
+body .page-wrapper .form-wrapper .back-btn,
+body .page-wrapper .form-wrapper .back-btn:visited,
+body .page-wrapper .form-wrapper .back-btn:active,
+body .page-wrapper .form-wrapper .back-btn:focus,
+body .page-wrapper .form-wrapper .back-btn:link {
+    color: #e63946 !important;
+    text-decoration: none !important;
+    background: transparent !important;
+    border: 2px solid #e63946 !important;
+}
+
+/* Form title */
+.form-wrapper h2 {
+    margin-bottom: 25px;
+    margin-top: 60px;
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #333;
+}
+
+/* Form fields */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, select {
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(255,255,255,0.5);
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+    background: rgba(255,255,255,0.7);
+    box-shadow: 0 0 8px rgba(230,57,70,0.3);
+}
+
+/* Login button */
+.cta-btn {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #e63946;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.cta-btn:hover {
+    background: #d62839;
+    transform: translateY(-2px);
+}
+
+/* Image banner */
+.image-banner {
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.banner-image.active {
+    opacity: 1;
+}
+
+/* Animations */
+@keyframes fadeUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* General link styles - but not for back button */
+a:not(.back-btn) {
+    color: inherit;
+    text-decoration: none;
+}
+a:not(.back-btn):visited {
+    color: inherit;
+}
